@@ -14,6 +14,7 @@
     "yarn": "1.21.1"
   },
   "scripts": {
+    "install": "npm css-compile;npm link",
     "watch": "node-sass --watch -o public/css assets/scss",
     "css-compile": "node-sass -o public/css assets/scss",
     "css-build": "node-sass --output-style compressed -o public/stylesheets assets/sass",
