@@ -1,0 +1,35 @@
+{% extends "layout.html.twig" %}
+
+{% block content %}
+    {{ form_start(form) }}
+    <div class="row mb-3">
+        <div class="col-md-3 offset-md-3">
+            {{ form_label(form.lengthOfPool,"Medence hossza") }}
+        </div>
+        <div class="col-md-3">
+            {{ form_widget(form.lengthOfPool) }}
+        </div>
+    </div>
+    <div class="row mb-3">
+        <div class="col-md-3 offset-md-3">
+            {{ form_label(form.laps,"Hossz") }}
+        </div>
+        <div class="col-md-3">
+            {{ form_widget(form.laps) }}
+        </div>
+    </div>
+    <div class="row mb-3">
+        <div class="col-md-3 offset-md-3">
+            {{ form_label(form.duration,"Idő (perc)") }}
+        </div>
+        <div class="col-md-3">
+            {{ form_widget(form.duration) }}
+        </div>
+    </div>
+    <div class="row mb-3">
+        <div class="col-md-4 offset-md-4">
+            <button type="submit" class="btn btn-block btn-primary">Mentés</button>
+        </div>
+    </div>
+    {{ form_end(form) }}
+{% endblock %}

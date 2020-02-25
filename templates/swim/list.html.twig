@@ -1,0 +1,32 @@
+{% extends "layout.html.twig" %}
+
+{% block content %}
+    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+        <h1 class="h2">Úszások</h1>
+        <div class="btn-toolbar mb-2 mb-md-0">
+            <div class="btn-group mr-2">
+                <a type="button" class="btn btn-sm btn-outline-secondary" href="{{ path('add_swims') }}">Hozzáadás</a>
+            </div>
+        </div>
+    </div>
+    <div class="table-responsive">
+        <table class="table table-striped table-sm">
+            <thead>
+            <tr>
+                <th>Medence hossza</th>
+                <th>Hossz</th>
+                <th>Idő (perc)</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for swim in swims %}
+                <tr>
+                    <td>{{ swim.lengthOfPool }}</td>
+                    <td>{{ swim.laps }}</td>
+                    <td>{{ swim.duration }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

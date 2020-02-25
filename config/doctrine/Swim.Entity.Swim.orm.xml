@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping"
+				  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+				  xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping
+                    http://raw.github.com/doctrine/doctrine2/master/doctrine-mapping.xsd">
+	
+	<entity name="App\Swim\Entity\Swim"
+			table="swims">
+		
+		<id name="id" type="integer" column="id">
+			<generator strategy="IDENTITY"/>
+		</id>
+
+		<many-to-one field="user" target-entity="App\User\Entity\User">
+			<join-column name="user_id" nullable="false" referenced-column-name="id" on-delete="CASCADE"/>
+		</many-to-one>
+
+		<field name="lengthOfPool" column="length_of_pull" nullable="false" type="integer"/>
+		<field name="laps" column="laps" type="integer" nullable="false"/>
+		<field name="duration" column="duration" type="integer" nullable="false"/>
+		<field name="heightAtTime" column="height_at_time" type="integer" nullable="false"/>
+		<field name="weightAtTime" column="weight_at_time" type="integer" nullable="false"/>
+		<field name="birthDateAtTime" column="birth_date_at_time" type="date" nullable="false"/>
+
+	</entity>
+	
+</doctrine-mapping>

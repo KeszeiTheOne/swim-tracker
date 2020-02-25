@@ -1,0 +1,44 @@
+{% extends "base.html.twig" %}
+
+
+{% block stylesheets %}
+    {% include 'layout.styles.html.twig' %}
+{% endblock %}
+
+{% block javascripts %}
+    {% include 'layout.scripts.html.twig' %}
+{% endblock %}
+
+{% block body %}
+    {% if error %}
+        <div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+    {% endif %}
+    <form action="{{ path("fos_user_security_check") }}" method="post" class="form-signin">
+        <div class="input-group mb-3">
+					<span class="input-group-prepend">
+						<span class="input-group-text">
+							<i class="fa fa-user"></i>
+						</span>
+					</span>
+            <input class="form-control" type="text" id="username" name="_username" value="{{ last_username }}"
+                   placeholder="{{ 'security.login.username'|trans({}, 'FOSUserBundle') }}" required="required"
+                   autocomplete="username"/>
+        </div>
+        <div class="input-group mb-3">
+					<span class="input-group-prepend">
+						<span class="input-group-text">
+                            <i class="fas fa-key"></i>
+                        </span>
+					</span>
+            <input class="form-control" type="password" id="password" name="_password" required="required"
+                   placeholder="{{ 'security.login.password'|trans({}, 'FOSUserBundle') }}"
+                   autocomplete="current-password"/>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block" id="_submit"
+                name="_submit">{{ 'security.login.submit'|trans({}, 'FOSUserBundle') }}</button>
+        {% if csrf_token %}
+            <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
+        {% endif %}
+    </form>
+    <a href="{{ path('fos_user_registration_register') }}">Regisztáció</a>
+{% endblock %}

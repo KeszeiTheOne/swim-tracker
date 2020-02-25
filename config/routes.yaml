@@ -1,0 +1,15 @@
+#index:
+#    path: /
+#    controller: App\Controller\DefaultController::index
+
+home:
+  path: /
+  controller: App\Controller\HomeController::index
+
+list_swims:
+  path: /swims
+  controller: App\Swim\UseCase\ListSwims\Controller\ListSwimsController::index
+
+add_swims:
+  path: /swim
+  controller: App\Swim\UseCase\AddSwim\Controller\AddSwimController::index

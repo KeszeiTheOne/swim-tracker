@@ -1,0 +1,21 @@
+{
+  "name": "swim_tracker",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Balazs Keszei",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.12.1",
+    "bootstrap": "^4.4.1",
+    "jquery": "^3.4.1"
+  },
+  "scripts": {
+    "watch": "node-sass --watch -o public/css assets/scss",
+    "css-compile": "node-sass -o public/css assets/scss",
+    "build": "NODE_PATH='assets/vendor' assets/vendor/.bin/npm-run-all unlink font-build css-build js-build",
+    "css-build": "node-sass --output-style compressed -o public/stylesheets assets/sass",
+    "link": "ln -fs -t public '../assets/js'; ln -fs '../node_modules' public/vendor ",
+    "js-build": "NODE_PATH='assets/vendor' node bin/build.js"
+  }
+}

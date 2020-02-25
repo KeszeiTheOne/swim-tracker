@@ -1,0 +1,15 @@
+{% extends "layout.html.twig" %}
+
+{% form_theme form "form/layout.html.twig" %}
+
+{% block content %}
+    {{ form_start(form, { 'action': path('fos_user_profile_edit') }) }}
+    {{ form_row(form.username,{label: "Felhasználó név"}) }}
+    {{ form_row(form.email,{label: "E-mail cím"}) }}
+    {{ form_row(form.weight,{label: "Aktuális súly"}) }}
+    {{ form_row(form.height,{label: "Aktuális magasság"}) }}
+    {{ form_row(form.birthDate,{label: "Születésnap"}) }}
+    {{ form_row(form.current_password,{label: "Jelszó"}) }}
+    <input type="submit" class="btn btn-primary" value="{{ 'profile.edit.submit'|trans({},"FOSUserBundle") }}" />
+    {{ form_end(form) }}
+{% endblock %}
