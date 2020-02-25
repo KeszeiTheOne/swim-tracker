@@ -14,12 +14,12 @@
     "yarn": "1.21.1"
   },
   "scripts": {
-    "install": "npm css-compile;npm link",
+    "install": "npm run css-compile",
     "watch": "node-sass --watch -o public/css assets/scss",
     "css-compile": "node-sass -o public/css assets/scss",
     "css-build": "node-sass --output-style compressed -o public/stylesheets assets/sass",
     "link": "ln -fs -t public '../assets/js'; ln -fs '../node_modules' public/vendor ",
     "js-build": "NODE_PATH='assets/vendor' node bin/build.js",
-    "heroku-prebuild": "echo This runs before Heroku installs your dependencies."
+    "heroku-prebuild": "npm run link"
   }
 }
