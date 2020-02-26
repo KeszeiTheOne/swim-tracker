@@ -1,0 +1,8 @@
+App\Swim\Entity\Swim:
+  properties:
+    lengthOfPool:
+      - NotBlank: ~
+    laps:
+      - NotBlank: ~
+    duration:
+      - NotBlank: ~

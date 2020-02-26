@@ -13,7 +13,7 @@ class ListSwimsController extends AbstractController {
 	public function index(Request $httpRequest) {
 		$swims = $this->getDoctrine()
 					  ->getRepository(Swim::class)
-					  ->findAll();
+					  ->findBy(["user" => $this->getUser()]);
 
 		return $this->render("swim/list.html.twig", [
 			"swims" => $swims,

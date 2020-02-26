@@ -6,7 +6,7 @@
         <h1 class="h2"><i class="fas fa-swimmer"></i> Úszások</h1>
         <div class="btn-toolbar mb-2 mb-md-0">
             <div class="btn-group mr-2">
-                <a type="button" class="btn btn-sm btn-outline-secondary" href="{{ path('list_swims') }}">Vissza</a>
+                <a type="button" class="btn btn-sm btn-outline-secondary" href="{{ path('show_swim',{id: swim.id}) }}">Vissza</a>
             </div>
         </div>
     </div>
@@ -34,6 +34,22 @@
                 </div>
                 <div class="col-md-3">
                     {{ form_widget(form.duration) }}
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col-md-3 offset-md-3">
+                    {{ form_label(form.weightAtTime,"Akkori súly") }}
+                </div>
+                <div class="col-md-3">
+                    {{ form_widget(form.weightAtTime) }}
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col-md-3 offset-md-3">
+                    {{ form_label(form.heightAtTime,"Akkori magasság") }}
+                </div>
+                <div class="col-md-3">
+                    {{ form_widget(form.heightAtTime) }}
                 </div>
             </div>
             <div class="row mb-3">

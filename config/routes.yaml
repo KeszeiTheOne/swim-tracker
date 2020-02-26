@@ -10,6 +10,24 @@ list_swims:
   path: /swims
   controller: App\Swim\UseCase\ListSwims\Controller\ListSwimsController::index
 
-add_swims:
+add_swim:
   path: /swim
   controller: App\Swim\UseCase\AddSwim\Controller\AddSwimController::index
+
+remove_swim:
+  path: /swim/{id}/remove
+  controller: App\Swim\UseCase\RemoveSwim\Controller\RemoveSwimController::index
+  requirements:
+    page: '\d+'
+
+show_swim:
+  path: /swim/{id}
+  controller: App\Swim\UseCase\ShowSwim\Controller\ShowSwimController::index
+  requirements:
+    page: '\d+'
+
+update_swim:
+  path: /swim/{id}/edit
+  controller: App\Swim\UseCase\UpdateSwim\Controller\UpdateSwimController::index
+  requirements:
+    page: '\d+'

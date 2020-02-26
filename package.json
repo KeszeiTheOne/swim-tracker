@@ -9,18 +9,22 @@
     "@fortawesome/fontawesome-free": "^5.12.1",
     "bootstrap": "^4.4.1",
     "jquery": "^3.4.1",
-    "node-sass": "^4.13.1"
+    "moment": "^2.17",
+    "moment-timezone": "^0.5.11",
+    "node-sass": "^4.13.1",
+    "popper.js": "^1.14.3",
+    "tempusdominus-bootstrap-4": "^5.1.2",
+    "tempusdominus-core": "5.0.3"
   },
   "engines": {
     "yarn": "1.21.1"
   },
   "scripts": {
-    "install": "npm run css-compile",
     "watch": "node-sass --watch -o public/css assets/scss",
     "css-compile": "node node_modules/node-sass/bin/node-sass -o public/css assets/scss",
     "css-build": "node-sass --output-style compressed -o public/stylesheets assets/sass",
     "link": "ln -fs -t public '../assets/js'; ln -fs '../node_modules' public/vendor ",
     "js-build": "NODE_PATH='assets/vendor' node bin/build.js",
-    "heroku-prebuild": "npm run link"
+    "heroku-prebuild": "npm run css-compile; npm run link"
   }
 }

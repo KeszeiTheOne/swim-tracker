@@ -1,5 +1,11 @@
+$fa-font-path: "./../vendor/@fortawesome/fontawesome-free/webfonts";
 @import "../../node_modules/bootstrap/scss/bootstrap";
 @import "../../node_modules/@fortawesome/fontawesome-free/scss/fontawesome";
+@import "../../node_modules/@fortawesome/fontawesome-free/scss/solid";
+@import "../../node_modules/@fortawesome/fontawesome-free/scss/regular";
+
+//@import "../../node_modules/tempusdominus-bootstrap-4/src/sass/tempusdominus-bootstrap-4";
+
 
 .sidebar {
   position: fixed;

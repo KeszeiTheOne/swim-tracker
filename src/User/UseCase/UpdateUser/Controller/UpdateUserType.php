@@ -13,10 +13,11 @@ use Symfony\Component\Form\FormBuilderInterface;
 class UpdateUserType extends AbstractType {
 
 	public function buildForm(FormBuilderInterface $builder, array $options) {
-		$builder->add("weight",IntegerType::class);
-		$builder->add("height",IntegerType::class);
-		$builder->add("birthDate",DateType::class,[
-			"years" => range(1900, (new \DateTime("today + 5 year"))->format("Y"))
+		$builder->add("weight", IntegerType::class);
+		$builder->add("height", IntegerType::class);
+		$builder->add("birthDate", DateType::class, [
+			"html5"  => false,
+			"widget" => "single_text",
 		]);
 	}
 

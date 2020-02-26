@@ -45,6 +45,13 @@ class Swim {
 	 */
 	private $birthDateAtTime;
 
+	/**
+	 * @return mixed
+	 */
+	public function getId() {
+		return $this->id;
+	}
+
 	public function getUser(): User {
 		return $this->user;
 	}

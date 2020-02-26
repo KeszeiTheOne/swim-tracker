@@ -1,0 +1,38 @@
+{% extends "layout.html.twig" %}
+
+{% block content %}
+    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+        <h1 class="h2"><i class="fas fa-swimmer"></i> Úszások</h1>
+        <div class="btn-toolbar mb-2 mb-md-0">
+            <div class="btn-group mr-2">
+                <a type="button" class="btn btn-sm btn-outline-secondary" href="{{ path('list_swims') }}">Vissza</a>
+                <a type="button" class="btn btn-sm btn-outline-secondary" href="{{ path('update_swim',{id: swim.id}) }}">Szerkesztés</a>
+                <a type="button" class="btn btn-sm btn-outline-danger" href="{{ path('remove_swim',{id: swim.id}) }}">Törlés</a>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <div class="row">
+                <div class="col">Medence hossza</div>
+                <div class="col">{{ swim.lengthOfPool }} m</div>
+            </div>
+            <div class="row">
+                <div class="col">Hossz</div>
+                <div class="col">{{ swim.laps }} db</div>
+            </div>
+            <div class="row">
+                <div class="col">Idő</div>
+                <div class="col">{{ swim.duration }} perc</div>
+            </div>
+            <div class="row">
+                <div class="col">Akkori súly</div>
+                <div class="col">{{ swim.weightAtTime }} kg</div>
+            </div>
+            <div class="row">
+                <div class="col">Akkori magasság</div>
+                <div class="col">{{ swim.heightAtTime }} cm</div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
