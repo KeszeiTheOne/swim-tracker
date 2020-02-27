@@ -1,20 +1,4 @@
-{% extends "base.html.twig" %}
-
-{% block stylesheets %}
-    {% include 'layout.styles.html.twig' %}
-{% endblock %}
-
-{% block javascripts %}
-    {% include 'layout.scripts.html.twig' %}
-    <script type="application/javascript">
-		$(function () {
-			$(".datetimepicker").datetimepicker({
-				format: "YYYY-MM-DD",
-				locale: moment.locale("hu")
-			});
-		});
-    </script>
-{% endblock %}
+{% extends "clean_layout.html.twig" %}
 
 {% block body %}
     {{ form_start(form,{attr:{class:"form-signin"} }) }}

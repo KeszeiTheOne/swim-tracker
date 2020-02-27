@@ -1,0 +1,11 @@
+{% extends "clean_layout.html.twig" %}
+
+{% block body %}
+    <div class="container-sm mt-3">
+        <div class="row">
+            <div class="col-md-4 offset-md-4">
+                <p>{{ 'registration.check_email'|trans({'%email%': user.email},"FOSUserBundle") }}</p>
+            </div>
+        </div>
+    </div>
+{% endblock %}

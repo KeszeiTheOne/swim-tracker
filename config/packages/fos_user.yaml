@@ -2,12 +2,16 @@ fos_user:
   db_driver: orm # other valid values are 'mongodb' and 'couchdb'
   firewall_name: main
   user_class: App\User\Entity\User
+  service:
+    mailer: App\Notifier\AppNotifier
   profile:
     form:
       type: App\User\UseCase\UpdateUser\Controller\UpdateUserType
   registration:
+    confirmation:
+      enabled: true
     form:
       type: App\User\UseCase\RegisterUser\Controller\RegisterUserType
   from_email:
-    address: "test@domain.com"
-    sender_name: "test@domain.com"
+    address: '%env(resolve:SENDER_EMAIL)%'
+    sender_name: '%env(resolve:SENDER_EMAIL)%'
