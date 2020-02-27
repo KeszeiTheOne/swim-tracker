@@ -15,12 +15,13 @@
 			<join-column name="user_id" nullable="false" referenced-column-name="id" on-delete="CASCADE"/>
 		</many-to-one>
 
+		<field name="createdAt" column="created_at" type="datetime" nullable="false"/>
+		<field name="swimAt" column="swim_at" type="datetime" nullable="false"/>
 		<field name="lengthOfPool" column="length_of_pull" nullable="false" type="integer"/>
 		<field name="laps" column="laps" type="integer" nullable="false"/>
 		<field name="duration" column="duration" type="integer" nullable="false"/>
 		<field name="heightAtTime" column="height_at_time" type="integer" nullable="false"/>
 		<field name="weightAtTime" column="weight_at_time" type="integer" nullable="false"/>
-		<field name="birthDateAtTime" column="birth_date_at_time" type="date" nullable="false"/>
 
 	</entity>
 	

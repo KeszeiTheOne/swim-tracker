@@ -22,7 +22,7 @@
     {{ form_row(form.username,{label: "Felhasználó név"}) }}
     {{ form_row(form.weight,{label: "Súly"}) }}
     {{ form_row(form.height,{label: "Magasság"}) }}
-    {{ form_row(form.birthDate,{label: "Születésnap", attr:{class: "datetimepicker","data-toggle":"datetimepicker","data-target":".datetimepicker"}}) }}
+    {{ form_row(form.birthDate,{label: "Születésnap", type:"text", attr:{class: "dateMask"}}) }}
     {{ form_row(form.plainPassword.first,{label: "Jelszó"}) }}
     {{ form_row(form.plainPassword.second,{label: "Jelszó mégegyszer"}) }}
     <button class="btn btn-primary">Regisztráció</button>

@@ -12,30 +12,61 @@
     </div>
     <div class="row">
         <div class="col-md-8 offset-md-2">
-            <div class="row mb-3">
-                <div class="col-md-3 offset-md-3">
-                    {{ form_label(form.lengthOfPool,"Medence hossza") }}
-                </div>
-                <div class="col-md-3">
-                    {{ form_widget(form.lengthOfPool) }}
-                </div>
-            </div>
-            <div class="row mb-3">
-                <div class="col-md-3 offset-md-3">
-                    {{ form_label(form.laps,"Hossz") }}
-                </div>
-                <div class="col-md-3">
-                    {{ form_widget(form.laps) }}
-                </div>
-            </div>
-            <div class="row mb-3">
-                <div class="col-md-3 offset-md-3">
-                    {{ form_label(form.duration,"Idő (perc)") }}
-                </div>
-                <div class="col-md-3">
-                    {{ form_widget(form.duration) }}
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-md-3 offset-md-3">
+                        {{ form_label(form.lengthOfPool,"Medence hossza") }}
+                    </div>
+                    <div class="col-md-3">
+                        <div class="input-group">
+                            {{ form_widget(form.lengthOfPool) }}
+                            <div class="input-group-append">
+                                <span class="input-group-text" id="basic-addon2">m</span>
+                            </div>
+                        </div>
+                        {{ form_errors(form.lengthOfPool) }}
+                    </div>
                 </div>
             </div>
+            <div class="form-group">
+                <div class="row mb-3">
+                    <div class="col-md-3 offset-md-3">
+                        {{ form_label(form.laps,"Hossz") }}
+                    </div>
+                    <div class="col-md-3">
+                        <div class="input-group">
+                            {{ form_widget(form.laps) }}
+                            <div class="input-group-append">
+                                <span class="input-group-text" id="basic-addon2">db</span>
+                            </div>
+                        </div>
+                        {{ form_errors(form.laps) }}
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="row mb-3">
+                    <div class="col-md-3 offset-md-3">
+                        {{ form_label(form.swimAt,"Mikor úsztál?") }}
+                    </div>
+                    <div class="col-md-3">
+                        {{ form_widget(form.swimAt,{ attr:{class: "datetimepicker","data-toggle":"datetimepicker","data-target":".datetimepicker"}}) }}
+                        {{ form_errors(form.swimAt) }}
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="row mb-3">
+                    <div class="col-md-3 offset-md-3">
+                        {{ form_label(form.duration,"Idő (perc)") }}
+                    </div>
+                    <div class="col-md-3">
+                        {{ form_widget(form.duration) }}
+                        {{ form_errors(form.duration) }}
+                    </div>
+                </div>
+            </div>
+
             <div class="row mb-3">
                 <div class="col-md-4 offset-md-4">
                     <button type="submit" class="btn btn-block btn-primary">Mentés</button>

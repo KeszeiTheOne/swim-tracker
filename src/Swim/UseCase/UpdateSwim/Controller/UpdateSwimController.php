@@ -17,7 +17,9 @@ class UpdateSwimController extends AbstractController {
 		if (null === $swim) {
 			throw new NotFoundHttpException();
 		}
-		$form = $this->createForm(UpdateSwimType::class, $swim);
+		$form = $this->createForm(UpdateSwimType::class, $swim,[
+			"validation_groups" => "update"
+		]);
 		$form->handleRequest($request);
 
 		if (!$form->isSubmitted() || !$form->isValid()) {

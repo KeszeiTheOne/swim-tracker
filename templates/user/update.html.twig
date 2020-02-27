@@ -13,12 +13,44 @@
     </div>
     {{ form_start(form, { 'action': path('fos_user_profile_edit') }) }}
     <div class="row">
-        <div class="col-md-8 offset-md-2">
+        <div class="col-md-4 offset-md-4 col-sm-6 offset-sm-3">
             {{ form_row(form.username,{label: "Felhasználó név"}) }}
-            {{ form_row(form.email,{label: "E-mail cím"}) }}
-            {{ form_row(form.weight,{label: "Aktuális súly"}) }}
-            {{ form_row(form.height,{label: "Aktuális magasság"}) }}
-            {{ form_row(form.birthDate,{label: "Születésnap", attr:{class: "datetimepicker","data-toggle":"datetimepicker","data-target":".datetimepicker"}}) }}
+            {{ form_row(form.email,{label: "E-mail cím",type:"text",attr: {class: "emailMask"}}) }}
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-6">
+                        {{ form_label(form.weight,"Aktuális súly") }}
+                    </div>
+                    <div class="col-6">
+                        <div class="input-group mb-3">
+                            {{ form_widget(form.weight,{type: "text",attr: {class: "weightMask"}}) }}
+                            <div class="input-group-append">
+                                <span class="input-group-text" id="basic-addon2">kg</span>
+                            </div>
+                        </div>
+                        {{ form_errors(form.weight) }}
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-6">
+                        {{ form_label(form.height,"Aktuális magasság") }}
+                    </div>
+                    <div class="col-6">
+                        <div class="input-group mb-3">
+                            {{ form_widget(form.height,{type: "text",attr: {class: "heightMask"}}) }}
+                            <div class="input-group-append">
+                                <span class="input-group-text" id="basic-addon2">cm</span>
+                            </div>
+                        </div>
+                        {{ form_errors(form.height) }}
+                    </div>
+                </div>
+            </div>
+            {{ form_row(form.birthDate,{label: "Születésnap", attr:{class: "dateMask"}}) }}
+            {#            {{ form_row(form.birthDate,{label: "Születésnap", attr:{class: "datetimepicker","data-toggle":"datetimepicker","data-target":".datetimepicker"}}) }}#}
             {{ form_row(form.current_password,{label: "Jelszó"}) }}
             <input type="submit" class="btn btn-primary" value="{{ 'profile.edit.submit'|trans({},"FOSUserBundle") }}"/>
         </div>

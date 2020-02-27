@@ -15,6 +15,17 @@ class Swim {
 	 * @var User
 	 */
 	private $user;
+
+	/**
+	 * @var DateTime
+	 */
+	private $createdAt;
+
+	/**
+	 * @var DateTime
+	 */
+	private $swimAt;
+
 	/**
 	 * @var int
 	 */
@@ -45,9 +56,10 @@ class Swim {
 	 */
 	private $birthDateAtTime;
 
-	/**
-	 * @return mixed
-	 */
+	public function __construct() {
+		$this->createdAt = new DateTime();
+	}
+
 	public function getId() {
 		return $this->id;
 	}
@@ -58,6 +70,15 @@ class Swim {
 
 	public function setUser(User $user): Swim {
 		$this->user = $user;
+		return $this;
+	}
+
+	public function getSwimAt() {
+		return $this->swimAt;
+	}
+
+	public function setSwimAt($swimAt): Swim {
+		$this->swimAt = $swimAt;
 		return $this;
 	}
 
@@ -72,7 +93,7 @@ class Swim {
 	 * @param int $lengthOfPool
 	 * @return Swim
 	 */
-	public function setLengthOfPool(int $lengthOfPool): Swim {
+	public function setLengthOfPool($lengthOfPool): Swim {
 		$this->lengthOfPool = $lengthOfPool;
 		return $this;
 	}
@@ -88,7 +109,7 @@ class Swim {
 	 * @param int $laps
 	 * @return Swim
 	 */
-	public function setLaps(int $laps): Swim {
+	public function setLaps($laps): Swim {
 		$this->laps = $laps;
 		return $this;
 	}
@@ -104,7 +125,7 @@ class Swim {
 	 * @param int $duration
 	 * @return Swim
 	 */
-	public function setDuration(int $duration): Swim {
+	public function setDuration($duration): Swim {
 		$this->duration = $duration;
 		return $this;
 	}
@@ -120,7 +141,7 @@ class Swim {
 	 * @param int $weightAtTime
 	 * @return Swim
 	 */
-	public function setWeightAtTime(int $weightAtTime): Swim {
+	public function setWeightAtTime($weightAtTime): Swim {
 		$this->weightAtTime = $weightAtTime;
 		return $this;
 	}
@@ -136,7 +157,7 @@ class Swim {
 	 * @param int $heightAtTime
 	 * @return Swim
 	 */
-	public function setHeightAtTime(int $heightAtTime): Swim {
+	public function setHeightAtTime($heightAtTime): Swim {
 		$this->heightAtTime = $heightAtTime;
 		return $this;
 	}
@@ -156,7 +177,6 @@ class Swim {
 		$this->birthDateAtTime = $birthDateAtTime;
 		return $this;
 	}
-
 
 
 }

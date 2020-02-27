@@ -2,7 +2,16 @@ App\Swim\Entity\Swim:
   properties:
     lengthOfPool:
       - NotBlank: ~
+      - Choice: [25, 50]
     laps:
       - NotBlank: ~
+      - Type: numeric
     duration:
       - NotBlank: ~
+      - Type: numeric
+    weightAtTime:
+      - NotBlank:
+          groups: ["update"]
+    heightAtTime:
+      - NotBlank:
+          groups: ["update"]
