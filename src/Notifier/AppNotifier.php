@@ -32,7 +32,7 @@ class AppNotifier implements FOSMailerInterface {
 	public function sendConfirmationEmailMessage(UserInterface $user) {
 		$url = $this->router->generate('fos_user_registration_confirm', ['token' => $user->getConfirmationToken()], UrlGeneratorInterface::ABSOLUTE_URL);
 		$email = (new TemplatedEmail())
-			->from('test@domain.com')
+			->from('info@swim-tracking.herokuapp.com')
 			->to(new Address((string)$user->getEmail()))
 			->subject('Thanks for signing up!')
 			->htmlTemplate('user/mail/confirmation.email.html.twig')

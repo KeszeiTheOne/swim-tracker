@@ -9,7 +9,7 @@ fos_user:
       type: App\User\UseCase\UpdateUser\Controller\UpdateUserType
   registration:
     confirmation:
-      enabled: false
+      enabled: true
     form:
       type: App\User\UseCase\RegisterUser\Controller\RegisterUserType
   from_email:
